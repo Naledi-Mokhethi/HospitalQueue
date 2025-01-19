@@ -9,27 +9,56 @@
     <link rel="stylesheet" href="~/HospitalQueue.styles.css" asp-append-version="true" />
 </head>
 <body>
-   @*  <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">HospitalQueue</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
-                    </ul>
+   <header>
+    <div class="header-top">
+        <div class="container clearfix">
+            <div class="top-left">
+                <h6>Opening Hours : 24/7</h6>
+            </div>
+        </div>
+    </div>
+    <!--header top-->
+    <!--Header Upper-->
+    <section class="header-uper">
+        <div class="container clearfix">
+            <div class="logo">
+                <figure>
+                    <a asp-area="" asp-controller="Home" asp-action="Index"><img src="~/images/logo.png" alt="" width="130"></a>
+                    @*   <a href="index.html">
+                    <img src="~/images/logo.png" alt="" width="130">
+                    </a> *@
+                </figure>
+            </div>
+            <div class="right-side">
+                <ul class="contact-info">
+                    <li class="item">
+                        <div class="icon-box">
+                            <i class="fa fa-envelope-o"></i>
+                        </div>
+                        <strong>Email</strong>
+                        <br>
+                        <a href="#">
+                            <span>info@medic.com</span>cc
+                        </a>
+                    </li>
+                    <li class="item">
+                        <div class="icon-box">
+                            <i class="fa fa-phone"></i>
+                        </div>
+                        <strong>Call Now</strong>
+                        <br>
+                        <span>+ (88017) - 123 - 4567</span>
+                    </li>
+                </ul>
+                <div class="link-btn">
+                    <a class="btn-style-one" asp-area="" asp-controller="RegistrationLogin" asp-action="ER_Registration">ER Registration</a>
+                    @*  <a href="#" class="btn-style-one">Appoinment</a> *@
                 </div>
             </div>
-        </nav> *@
+        </div>
+    </section>
     </header>
+    <!--Header Upper-->
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()

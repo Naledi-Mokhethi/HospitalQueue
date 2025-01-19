@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace HospitalQueue.Controllers
 {
-    public class LoginRegistration : Controller
+    public class RegistrationLogin : Controller
     {
         // GET: LoginRegistration
         public IActionResult ER_Registration()

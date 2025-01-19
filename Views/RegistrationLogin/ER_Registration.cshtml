@@ -1,0 +1,140 @@
+﻿@model HospitalQueue.Models.ER_Registration
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>ER_Registration</title>
+    <!-- mobile responsive meta -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!-- Slick Carousel -->
+    <link rel="stylesheet" href="~/plugins/slick/slick.css">
+    <link rel="stylesheet" href="~/plugins/slick/slick-theme.css">
+    <!-- FancyBox -->
+    <link rel="stylesheet" href="~/plugins/fancybox/jquery.fancybox.min.css">
+
+    <!-- Stylesheets -->
+    <link href="~/css/style.css" rel="stylesheet">
+
+    <!--Favicon-->
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+
+</head>
+<body>
+    <header>
+        <!--Header Upper-->
+        <section class="header-uper">
+            <div class="container clearfix">
+                <div class="logo">
+                    <figure>
+                        <a asp-area="" asp-controller="Home" asp-action="Index"><img src="~/images/logo.png" alt="" width="130"></a>
+                        @*   <a href="index.html">
+                        <img src="~/images/logo.png" alt="" width="130">
+                        </a> *@
+                    </figure>
+                </div>
+                <div class="right-side">
+                    <ul class="contact-info">
+                        <li class="item">
+                            <div class="icon-box">
+                                <i class="fa fa-envelope-o"></i>
+                            </div>
+                            <strong>Email</strong>
+                            <br>
+                            <a href="#">
+                                <span>info@medic.com</span>cc
+                            </a>
+                        </li>
+                        <li class="item">
+                            <div class="icon-box">
+                                <i class="fa fa-phone"></i>
+                            </div>
+                            <strong>Call Now</strong>
+                            <br>
+                            <span>+ (27) - 123 - 4567</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </header>
+    <section class="appoinment-section section">
+        <div class="container">    
+                <div class="col-md-6 col-sm-12 col-xs-12">
+                    <div class="contact-area">
+                        <div class="section-title">
+                            <h3>
+                                Emergency Room
+                                <span>Registration</span>
+                            </h3>
+                        </div>
+                        <form name="contact_form" class="default-form contact-form" action="sendmail.php" method="post"> <!--Update using controllers-->
+                            <div class="row">
+                                <div class="col-md-6 col-sm-12 col-xs-12">
+                                    <div class="form-group">
+                                        <input type="text" name="Full Name" placeholder="Full Name" required="">
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" name="ID Number" placeholder="ID Number" required="">
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-sm-12 col-xs-12">
+                                   <div class="form-group">
+                                        <input type="text" name="Last Name" placeholder="Last Name" required="">
+                                   </div>
+                                <div class="form-group" hidden="hidden">
+                                        <input type="text" name="Date" placeholder="Date" required="" id="datepicker">
+                                        <i class="fa fa-calendar" aria-hidden="true"></i>
+                                    </div>
+                                <div class="form-group">
+                                    <input type="tel" name="Phone Number" placeholder="Phone Number" required="">
+                                </div>
+                                </div>
+                                <div class="col-md-12 col-sm-12 col-xs-12">
+                                    <strong>Please select your emergency (or similar)</strong>
+                                    <br>
+                                    <div class="form-group">
+                                        <select name="subject" >
+                                            <option>Injury</option>
+                                            <option>Pains</option>
+                                            <option>Foreign Object</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <textarea name="form_message" placeholder="Problem Description (Opional)"></textarea>
+                                    </div>
+                                    <div class="form-group text-center">
+                                        <button type="submit" class="btn-style-one">submit</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+    </section>
+    <script src="~/plugins/jquery.js"></script>
+    <script src="~/plugins/bootstrap.min.js"></script>
+    <script src="~/plugins/bootstrap-select.min.js"></script>
+    <!-- Slick Slider -->
+    <script src="~/plugins/slick/slick.min.js"></script>
+    <!-- FancyBox -->
+    <script src="~/plugins/fancybox/jquery.fancybox.min.js"></script>
+    <!-- Google Map -->
+    <script src="~/plugins/google-map/gmap.js"></script>
+
+    <script src="~/plugins/validate.js"></script>
+    <script src="~/plugins/wow.js"></script>
+    <script src="~/plugins/jquery-ui.js"></script>
+    <script src="~/plugins/timePicker.js"></script>
+    <script src="~/js/script.js"></script>
+</body>
+</html>

@@ -3251,10 +3251,15 @@ li {
   .fact-counter .column .item {
     margin-bottom: 40px !important;
   }
-  .contact-area {
-    margin-top: 70px !important;
-    padding-left: 0px !important;
-  }
+.contact-area {
+    /*  margin-top: 70px !important;
+    padding-left: 0px !important;*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* This will vertically center the content as well */
+    margin: auto; /* This centers the container horizontally */
+}
   .footer-main .footer-top .social-links {
     margin-left: 0px !important;
   }
