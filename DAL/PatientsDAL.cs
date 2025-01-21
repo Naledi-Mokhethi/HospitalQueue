@@ -1,6 +1,7 @@
 ﻿namespace HospitalQueue.DAL
 {
-    public class DbContext
+    public class PatientsDAL
     {
+
     }
 }
