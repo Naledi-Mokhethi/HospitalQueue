@@ -18,7 +18,10 @@
     <link rel="stylesheet" href="~/plugins/slick/slick.css">
     <link rel="stylesheet" href="~/plugins/slick/slick-theme.css">
     <!-- FancyBox -->
-    <link rel="stylesheet" href="~/plugins/fancybox/jquery.fancybox.min.css">
+    <!--Favicon-->
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="~/plugins/fancybox/jquery.fancybox.min.css"> 
 
     <!-- Stylesheets -->
     <link href="~/css/style.css" rel="stylesheet">
@@ -97,7 +100,7 @@
                                         <i class="fa fa-calendar" aria-hidden="true"></i>
                                     </div>
                                 <div class="form-group">
-                                    <input asp-for="PhoneNumber" class="form-control" placeholder="Phone Number" required="" />
+                                    <input asp-for="PhoneNumber" type="text" class="form-control" placeholder="Phone Number" required="" />
                                     @* <input type="tel" name="Phone Number" placeholder="Phone Number" required=""> *@
                                 </div>
                                 </div>
@@ -135,9 +138,9 @@
                 </div>
             </div>
     </section>
-    <script src="~/plugins/jquery.js"></script>
+ @*    <script src="~/plugins/jquery.js"></script> *@
     <script src="~/plugins/bootstrap.min.js"></script>
     <script src="~/plugins/bootstrap-select.min.js"></script>
-    <script src="~/plugins/validate.js"></script>
+   @*  <script src="~/plugins/validate.js"></script> *@
 </body>
 </html>
