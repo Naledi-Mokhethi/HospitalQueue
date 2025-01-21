@@ -12,4 +12,28 @@
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="8.0.7" />
   </ItemGroup>
 
+  <ItemGroup>
+    <EditorConfigFiles Remove="C:\Users\Naledi\source\repos\HospitalQueue\.editorconfig" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="C:\Users\Naledi\source\repos\HospitalQueue\.editorconfig" />
+    <None Include="wwwroot\plugins\bootstrap-select.min.js" />
+    <None Include="wwwroot\plugins\bootstrap.min.js" />
+    <None Include="wwwroot\plugins\fancybox\jquery.fancybox.min.js" />
+    <None Include="wwwroot\plugins\jquery-ui.js" />
+    <None Include="wwwroot\plugins\jquery.appear.js" />
+    <None Include="wwwroot\plugins\jquery.js" />
+    <None Include="wwwroot\plugins\slick\config.rb" />
+    <None Include="wwwroot\plugins\slick\fonts\slick.svg" />
+    <None Include="wwwroot\plugins\slick\slick-theme.less" />
+    <None Include="wwwroot\plugins\slick\slick-theme.scss" />
+    <None Include="wwwroot\plugins\slick\slick.js" />
+    <None Include="wwwroot\plugins\slick\slick.less" />
+    <None Include="wwwroot\plugins\slick\slick.min.js" />
+    <None Include="wwwroot\plugins\slick\slick.scss" />
+    <None Include="wwwroot\plugins\validate.js" />
+    <None Include="wwwroot\plugins\wow.js" />
+  </ItemGroup>
+
 </Project>

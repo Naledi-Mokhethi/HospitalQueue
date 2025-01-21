@@ -2,7 +2,7 @@
 {
     public class ER_Registration
     {
-        public string Key { get; set; } //private field
+        private int Key { get; set; } //private field
         public string? FullNames { get; set; }    
         public string? LastName { get; set; }
         public int ID { get; set; }
