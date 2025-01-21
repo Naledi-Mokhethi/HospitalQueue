@@ -13,9 +13,10 @@ namespace HospitalQueue.Controllers
 
             var problemPriority = new List<KeyValuePair<int, string>>
             {
-                new KeyValuePair<int, string>(1, "Injury"),
-                new KeyValuePair<int, string>(2, "Pains"),
-                new KeyValuePair<int, string>(3, "Foreign Object")
+                new KeyValuePair<int, string>(1, "Unconscious"),
+                new KeyValuePair<int, string>(2, "Penetrating trauma (Stab or Gunshot)"),
+                new KeyValuePair<int, string>(3, "Pains (Chest and Body)"),
+                new KeyValuePair<int, string>(4, "Foreign Object")
             };
 
             var viewModel = new ER_Registration
@@ -27,9 +28,11 @@ namespace HospitalQueue.Controllers
         [HttpPost]
         public IActionResult ER_Registration(ER_Registration model)
         {
+            //Node data list can be populated from here....
             int selectedPriority = model.SelectedPriority;
+            model.DateTime = DateTime.Now;
     
-            return View(model);
+            return View(model);// redirect to return the number
         }
 
 

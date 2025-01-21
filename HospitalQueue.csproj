@@ -22,7 +22,6 @@
     <None Include="wwwroot\plugins\bootstrap-select.min.js" />
     <None Include="wwwroot\plugins\bootstrap.min.js" />
     <None Include="wwwroot\plugins\fancybox\jquery.fancybox.min.js" />
-    <None Include="wwwroot\plugins\jquery-ui.js" />
     <None Include="wwwroot\plugins\slick\config.rb" />
     <None Include="wwwroot\plugins\slick\fonts\slick.svg" />
     <None Include="wwwroot\plugins\slick\slick-theme.less" />

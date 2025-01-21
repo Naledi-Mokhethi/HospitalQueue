@@ -35,9 +35,6 @@
                 <div class="logo">
                     <figure>
                         <a asp-area="" asp-controller="Home" asp-action="Index"><img src="~/images/logo.png" alt="" width="130"></a>
-                        @*   <a href="index.html">
-                        <img src="~/images/logo.png" alt="" width="130">
-                        </a> *@
                     </figure>
                 </div>
                 <div class="right-side">
@@ -48,9 +45,7 @@
                             </div>
                             <strong>Email</strong>
                             <br>
-                            <a href="#">
-                                <span>info@medic.com</span>cc
-                            </a>
+                                <span>info@medic.com</span>
                         </li>
                         <li class="item">
                             <div class="icon-box">
@@ -58,7 +53,7 @@
                             </div>
                             <strong>Call Now</strong>
                             <br>
-                            <span>+ (27) - 123 - 4567</span>
+                            <span>+(27) - 112</span>
                         </li>
                     </ul>
                 </div>
@@ -75,21 +70,21 @@
                                 <span>Registration</span>
                             </h3>
                         </div>
-                    <form asp-action="ER_Registration" name="contact_form" class="default-form contact-form">
+                    <form asp-action="ER_Registration" id="erReg" name="contact_form" class="default-form contact-form" onsubmit="sendForm(event)">
                             <div class="row">
                                 <div class="col-md-6 col-sm-12 col-xs-12">
                                     <div class="form-group">
-                                    <input asp-for="FullNames" class="form-control" placeholder="Full Name" required="" />
+                                    <input asp-for="FullNames" class="form-control" placeholder="Full Name" required="" autocomplete="off" />
 @*                                         <input type="text" name="Full Name" placeholder="Full Name" required=""> *@
                                     </div>
                                     <div class="form-group">
-                                    <input type="text" asp-for="ID" class="form-control" placeholder="ID Number" required="">
+                                    <input type="text" asp-for="ID" class="form-control" placeholder="ID Number" required="" autocomplete="off">
                                     @*   <input type="text" name="ID Number" placeholder="ID Number" required=""> *@
                                     </div>
                                 </div>
                                 <div class="col-md-6 col-sm-12 col-xs-12">
                                    <div class="form-group">
-                                    <input asp-for="LastName" class="form-control" placeholder="Last Name" required="" />
+                                    <input asp-for="LastName" class="form-control" placeholder="Last Name" required="" autocomplete="off" />
                                    @*      <input type="text" name="Last Name" placeholder="Last Name" required=""> *@
                                    </div>
                                 <div class="form-group" hidden="hidden">
@@ -126,7 +121,7 @@
                                         @* <textarea name="form_message" placeholder="Problem Description (Opional)"></textarea> *@
                                     </div>
                                     <div class="form-group text-center">
-                                    <button type="submit" value="Save" class="btn-style-one">submit</button>
+                                    <button type="submit" value="Save" onclick="displayAlertSuccess()" class="btn-style-one">submit</button>
                                     </div>
                                 </div>
                             </div>
@@ -138,6 +133,26 @@
  @*    <script src="~/plugins/jquery.js"></script> *@
     <script src="~/plugins/bootstrap.min.js"></script>
     <script src="~/plugins/bootstrap-select.min.js"></script>
-   @*  <script src="~/plugins/validate.js"></script> *@
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        function displayAlertSuccess() {
+            Swal.fire('Registration Sent', 'success', 'success')
+        }
+        
+        function sendForm(e) {
+            e.preventDefault();
+
+            Swal.fire({
+                title: 'Do you want to submit your ER registration',
+                icon: 'question',
+                showCancelButton:true
+            }).then(result => {
+                if (result.isConfirmed){
+                    const erReg = document.getElementById('erReg');
+                    erReg.submit();
+                }
+            })
+        }
+    </script>
 </body>
 </html>
