@@ -1,6 +1,7 @@
 ﻿using HospitalQueue.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using HospitalQueue.Class;
 
 
 namespace HospitalQueue.Controllers
@@ -28,11 +29,26 @@ namespace HospitalQueue.Controllers
         [HttpPost]
         public IActionResult ER_Registration(ER_Registration model)
         {
+            DateTime? dateTimeNow = DateTime.Now; 
             //Node data list can be populated from here....
+            List<object> patientDataList = new List<object>
+            {
+                model.FullNames!,
+                model.LastName!,
+                model.ID,
+                model.PhoneNumber!,
+                model.DateTime,
+                model.ProblemPriority![1],
+                model.ProblemPriority![0],
+                model.Description
+            };  
+            //Passing the value of the selected Priority
             int selectedPriority = model.SelectedPriority;
-            model.DateTime = DateTime.Now;
-    
-            return View(model);// redirect to return the number
+
+            var myPriorityQueue = new PriorityQueue();
+            myPriorityQueue.MaxEnqueue(patientDataList, selectedPriority);
+
+            return View(model);// the number will be returned by the custom UI so return index after response 
         }
 
 

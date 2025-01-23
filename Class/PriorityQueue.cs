@@ -26,30 +26,30 @@ namespace HospitalQueue.Class
                 current.Next = newNode;//replace node with new value 
             }
         }
-        //public int Dequeue()
-        //{
-        //    if (IsEmpty())
-        //    {
-        //        throw new InvalidOperationException("Priority Queue is empty.");
-        //    }
+        public string Dequeue()
+        {
+            if (IsEmpty())
+            {
+                throw new InvalidOperationException("ER Queue is empty.");
+            }
 
-        //    int value = head!.Data;
-        //    head = head.Next;
-        //    return value;
-        //}
+            var value = head!.Data;
+            head = head.Next;// Before changing the head, we need to write the currrent head to the database 
+            return (string)value[0]; //Return next patients name
+        }
 
-        //public bool IsEmpty()
-        //{
-        //    return head == null;
-        //}
+        public bool IsEmpty()
+        {
+            return head == null;
+        }
 
-        //public int Peek()
-        //{
-        //    if (IsEmpty())
-        //    {
-        //        throw new InvalidOperationException("Priority Queue is empty.");
-        //    }
-        //    return head.Data;
-        //}
+        public string Peek()
+        {
+            if (IsEmpty())
+            {
+                throw new InvalidOperationException("ER Queue is empty.");
+            }
+            return (string)head!.Data[0]; // used to show the patient that is currently being helped
+        }
     }
 }
