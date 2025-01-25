@@ -8,6 +8,12 @@ namespace HospitalQueue.Controllers
 {
     public class ErRegistrationController : Controller
     {
+        private readonly PriorityQueue _myPriorityQueue;
+
+        public ErRegistrationController(PriorityQueue myPriorityQueue)
+        {
+            _myPriorityQueue = myPriorityQueue;
+        }
 
         // GET: LoginRegistration
         [HttpGet]
@@ -28,7 +34,10 @@ namespace HospitalQueue.Controllers
             };
             return View(viewModel);
         }
-
+        [HttpGet]
+        public IActionResult Success() { 
+            return View(); 
+        }
 
         [HttpPost]
         public IActionResult ErRegistration(ErRegistration model)
@@ -47,11 +56,9 @@ namespace HospitalQueue.Controllers
             };  
             //Passing the value of the selected Priority
             int selectedPriority = model.SelectedPriority;
+            _myPriorityQueue.MaxEnqueue(patientDataList, selectedPriority);
 
-            var myPriorityQueue = new PriorityQueue();
-            myPriorityQueue.MaxEnqueue(patientDataList, selectedPriority);
-
-            return View("Home/Index");// the number will be returned by the custom UI so return index after response 
+            return View("Success");// the number will be returned by the custom UI so return index after response 
         }
     }
 
