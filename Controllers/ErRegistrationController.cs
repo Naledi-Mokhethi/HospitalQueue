@@ -6,23 +6,23 @@ using HospitalQueue.Class;
 
 namespace HospitalQueue.Controllers
 {
-    public class RegistrationLoginController : Controller
+    public class ErRegistrationController : Controller
     {
 
         // GET: LoginRegistration
         [HttpGet]
-        public IActionResult ER_Registration()
+        public IActionResult ErRegistration()
         {
 
             var problemPriority = new List<KeyValuePair<int, string>>
             {
                 new KeyValuePair<int, string>(1, "Unconscious"),
-                new KeyValuePair<int, string>(2, "Penetrating trauma (Stab or Gunshot)"), 
+                new KeyValuePair<int, string>(2, "Penetrating trauma (Stab or Gunshot)"),
                 new KeyValuePair<int, string>(3, "Pains (Chest and test)"),
                 new KeyValuePair<int, string>(4, "Foreign Object")
             };
 
-            var viewModel = new ER_Registration
+            var viewModel = new ErRegistration
             {
                 ProblemPriority = problemPriority
             };
@@ -31,10 +31,10 @@ namespace HospitalQueue.Controllers
 
 
         [HttpPost]
-        public IActionResult ER_Registration(ER_Registration model)
+        public IActionResult ErRegistration(ErRegistration model)
         {
-            DateTime? dateTimeNow = DateTime.Now; 
             //Node data list can be populated from here....
+            model.DateTime = DateTime.Now;  
             List<object> patientDataList = new List<object>
             {
                 model.FullNames!,
@@ -42,8 +42,7 @@ namespace HospitalQueue.Controllers
                 model.ID,
                 model.PhoneNumber!,
                 model.DateTime,
-                model.ProblemPriority![1],
-                model.ProblemPriority![0],
+                model.SelectedPriority,
                 model.Description
             };  
             //Passing the value of the selected Priority
@@ -52,7 +51,8 @@ namespace HospitalQueue.Controllers
             var myPriorityQueue = new PriorityQueue();
             myPriorityQueue.MaxEnqueue(patientDataList, selectedPriority);
 
-            return View();// the number will be returned by the custom UI so return index after response 
+            return View("Home/Index");// the number will be returned by the custom UI so return index after response 
         }
     }
+
 }

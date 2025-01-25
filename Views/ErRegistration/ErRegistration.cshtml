@@ -1,4 +1,4 @@
-﻿@model HospitalQueue.Models.ER_Registration
+﻿@model HospitalQueue.Models.ErRegistration
 
 @{
     Layout = null;
@@ -9,7 +9,7 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>ER_Registration</title>
+    <title>ER Registration</title>
     <!-- mobile responsive meta -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -40,17 +40,11 @@
                 <div class="right-side">
                     <ul class="contact-info">
                         <li class="item">
-                            <div class="icon-box">
-                                <i class="fa fa-envelope-o"></i>
-                            </div>
                             <strong>Email</strong>
                             <br>
                                 <span>info@medic.com</span>
                         </li>
                         <li class="item">
-                            <div class="icon-box">
-                                <i class="fa fa-phone"></i>
-                            </div>
                             <strong>Call Now</strong>
                             <br>
                             <span>+(27) - 112</span>
@@ -70,62 +64,54 @@
                                 <span>Registration</span>
                             </h3>
                         </div>
-                    <form asp-action="ER_Registration" id="erReg" name="contact_form" class="default-form contact-form" onsubmit="sendForm(event)">
-                            <div class="row">
-                                <div class="col-md-6 col-sm-12 col-xs-12">
-                                    <div class="form-group">
+                    <form method="post" id="erReg" name="contact_form" class="default-form contact-form">
+                        <div class="row">
+                            <div class="col-md-6 col-sm-12 col-xs-12">
+                                <div class="form-group">
                                     <input asp-for="FullNames" class="form-control" placeholder="Full Name" required="" autocomplete="off" />
-@*                                         <input type="text" name="Full Name" placeholder="Full Name" required=""> *@
-                                    </div>
-                                    <div class="form-group">
-                                    <input type="text" asp-for="ID" class="form-control" placeholder="ID Number" required="" autocomplete="off">
-                                    @*   <input type="text" name="ID Number" placeholder="ID Number" required=""> *@
-                                    </div>
+                              
                                 </div>
-                                <div class="col-md-6 col-sm-12 col-xs-12">
-                                   <div class="form-group">
+                                <div class="form-group">
+                                    <input type="text" asp-for="ID" class="form-control" placeholder="ID Number" required="" autocomplete="off">
+                                   
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-sm-12 col-xs-12">
+                                <div class="form-group">
                                     <input asp-for="LastName" class="form-control" placeholder="Last Name" required="" autocomplete="off" />
-                                   @*      <input type="text" name="Last Name" placeholder="Last Name" required=""> *@
-                                   </div>
-                                <div class="form-group" hidden="hidden">
-                                        <input type="text" name="Date" placeholder="Date" required="" id="datepicker">
-                                        <i class="fa fa-calendar" aria-hidden="true"></i>
-                                    </div>
+                                  
+                                </div>
                                 <div class="form-group">
                                     <input asp-for="PhoneNumber" type="text" class="form-control" placeholder="Phone Number" required="" />
-                                    @* <input type="tel" name="Phone Number" placeholder="Phone Number" required=""> *@
+ 
                                 </div>
+                                <div class="form-group" hidden="hidden">
+                                    <input asp-for="DateTime" type="datetime" placeholder="Date">
                                 </div>
-                                <div class="col-md-12 col-sm-12 col-xs-12">
-                                    <strong>Please select your emergency (or similar)</strong>
-                                    <br>
-                                    <div class="form-group">
-                                    <select name="subject" asp-for="SelectedPriority">
+                            </div>
+                            <div class="col-md-12 col-sm-12 col-xs-12">
+                                <strong>Please select your emergency (or similar)</strong>
+                                <br>
+                                <div class="form-group">
+                                    <select asp-for="SelectedPriority">
                                         @foreach (var item in Model.ProblemPriority)
                                         {
                                             <option value="@item.Key">@item.Value</option>
                                         }
                                     </select>
-                                   @*  <select name="subject" >
-                                        <!--Update using KeyValuePair-->
-                                            <option>Injury</option>
-                                            <option>Pains</option>
-                                            <option>Foreign Object</option>
-                                        </select> *@
-                                    </div>
-                                    <div class="form-group">
-                                    <textarea name="form_message" input asp-for="Description" class="form-control" placeholder="Problem Description (Opional)">
+                                    
+                                </div>
+                                <div class="form-group">
+                                    <textarea asp-for="Description" class="form-control" placeholder="Problem Description (Opional)">
                                            </textarea>
-                                    @* <input asp-for="Description" class="form-control" placeholder="Problem Description (Opional)" /> *@
                                  
-                                        @* <textarea name="form_message" placeholder="Problem Description (Opional)"></textarea> *@
-                                    </div>
-                                    <div class="form-group text-center">
-                                    <button type="submit" value="Save" onclick="displayAlertSuccess()" class="btn-style-one">submit</button>
-                                    </div>
+                                </div>
+                                <div class="form-group text-center">
+                                    <button type="submit" value="Save" class="btn-style-one">submit</button>
                                 </div>
                             </div>
-                        </form>
+                        </div>
+                    </form>
                     </div>
                 </div>
             </div>
