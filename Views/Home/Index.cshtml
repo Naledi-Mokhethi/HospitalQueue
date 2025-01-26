@@ -1,22 +1,15 @@
-﻿<!DOCTYPE html>
+﻿@model string;
+<!DOCTYPE html>
 <html>
 
 <head>
     <meta charset="utf-8">
-    <title>Medic | Medical HTML Template</title>
+    <title>Medic </title>
 
 
     <!-- mobile responsive meta -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-
-    <!-- Slick Carousel -->
-    <link rel="stylesheet" href="~/plugins/slick/slick.css">
-    <link rel="stylesheet" href="~/plugins/slick/slick-theme.css">
-    <!-- FancyBox -->
-    <link rel="stylesheet" href="~/plugins/fancybox/jquery.fancybox.min.css">
-    <!-- Icons -->
-    <link rel="stylesheet" href="~/plugins/font-awesome-4.7.0/css/font-awesome">
 
     <!-- Stylesheets -->
     <link href="~/css/style.css" rel="stylesheet">
@@ -42,12 +35,12 @@
                         <div class="col-12">
                             <!-- Slide Content Start -->
                             <div class="content style text-center">
-                                <h2 class="text-white text-bold mb-2">Our Best Surgeons</h2>
+                                <h2 class="text-white text-bold mb-2">Patients in Queue</h2>
                                 <p class="tag-text mb-5">
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel sunt animi sequi ratione quod at earum. <br>
-                                    Quis quos officiis numquam!
+                                    Now Serving <strong> @Model  </strong>In ER Room 001
                                 </p>
-                                <a href="#" class="btn btn-main btn-white">Dequeue</a>
+                                
+                                <a href="#" class="btn btn-main btn-white">Dequeue</a> <!--Direct to dequeue controller action and updated/refresh the now serving and next-->
                             </div>
                             <!-- Slide Content End -->
                         </div>
@@ -64,19 +57,16 @@
                     <div class="col-md-12">
                         <div class="cta-block">
                             <div class="emmergency item">
-                                <i class="fa fa-phone"></i>
                                 <h2>Emegency Cases</h2>
-                                <a href="#">1-800-700-6200</a>
-                                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+                                <h2>(082) - 911</h2>
+                                <p>To request an ambulance, please dial the number above.</p>
                             </div>
                             <div class="top-doctor item">
-                                <i class="fa fa-stethoscope"></i>
                                 <h2>24 Hour Service</h2>
-                                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Inventore dignissimos officia dicta suscipit vel eum</p>
+                                <p>Our Emergency room is open 24/7 because your health is our priority</p>
                 
                             </div>
                             <div class="working-time item">
-                                <i class="fa fa-hourglass-o"></i>
                                 <h2>Working Hours</h2>
                                 <ul class="w-hours">
                                     <li>Mon - Fri  - <span>8:00 - 17:00</span></li>

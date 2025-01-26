@@ -1,4 +1,8 @@
-﻿<!DOCTYPE html>
+﻿@{
+    string currentController = ViewContext.RouteData.Values["controller"]?.ToString() ?? string.Empty;
+    string currentAction = ViewContext.RouteData.Values["action"]?.ToString() ?? string.Empty;
+}
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -22,8 +26,7 @@
         <div class="container clearfix">
             <div class="logo">
                 <figure>
-                    <a asp-area="" asp-controller="Home" asp-action="Index"><img src="~/images/logo.png" alt="" width="130"></a>
-
+                        <a asp-area="" asp-controller="Home" asp-action="Index"><img src="~/images/logo.png" alt="" width="130"></a>
                 </figure>
             </div>
                 <div class="right-side">
@@ -40,32 +43,14 @@
                         </li>
                     </ul>
                     <div class="link-btn">
-                        <a class="btn-style-one" asp-area="" asp-controller="ErRegistration" asp-action="ErRegistration">ER Registration</a>
+                        @if (!(currentController == "ErRegistration" && currentAction == "ErRegistration"))
+                        {
+                            <a class="btn-style-one" asp-area="" asp-controller="ErRegistration" asp-action="ErRegistration">ER Registration</a>
+                        }
+                      
                     </div>
                 </div>
-         @*    <div class="right-side">
-                    <ul class="contact-info">
-                        <li class="item">
-                            <div class="icon-box">
-                                <i class="fa fa-envelope-o"></i>
-                            </div>
-                            <strong>Email</strong>
-                            <br>
-                            <span>info@medic.com</span>cc
-                        </li>
-                        <li class="item">
-                            <div class="icon-box">
-                                <i class="fa fa-phone"></i>
-                            </div>
-                            <strong>Call Now</strong>
-                            <br>
-                            <span>+(27) - 112</span>
-                        </li>
-                    </ul>
-                <div class="link-btn">
-                        <a class="btn-style-one" asp-area="" asp-controller="ErRegistration" asp-action="ErRegistration">ER Registration</a>
-                </div>
-            </div> *@
+
         </div>
     </section>
     </header>

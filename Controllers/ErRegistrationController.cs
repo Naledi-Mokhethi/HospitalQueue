@@ -36,7 +36,7 @@ namespace HospitalQueue.Controllers
         }
         [HttpGet]
         public IActionResult Success() { 
-            return View(); 
+            return View(); // temp
         }
 
         [HttpPost]
@@ -60,6 +60,7 @@ namespace HospitalQueue.Controllers
 
             return View("Success");// the number will be returned by the custom UI so return index after response 
         }
+       
     }
 
 }

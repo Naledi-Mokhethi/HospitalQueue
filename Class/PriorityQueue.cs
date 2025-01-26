@@ -4,7 +4,7 @@ namespace HospitalQueue.Class
 {
     public class PriorityQueue
     {
-        private Node? head;
+        public Node? head;
         public void MaxEnqueue(List<object>data , int priority)
         {
             List<object> ModelData = new List<object>();
@@ -49,7 +49,12 @@ namespace HospitalQueue.Class
             {
                 throw new InvalidOperationException("ER Queue is empty.");
             }
-            return (string)head!.Data[0]; // used to show the patient that is currently being helped
+            //if (head!.Next != null)
+            //    return (string)head!.Data[0]; // used to show the patient that is currently being helped  We are gonna 
+            //else
+            //    return "There is no next patient";
+
+            return (string)head!.Data[0] + " " + (string)head!.Data[1];
         }
     }
 }

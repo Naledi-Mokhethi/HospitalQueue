@@ -18,18 +18,24 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="C:\Users\Naledi\source\repos\HospitalQueue\.editorconfig" />
-    <None Include="wwwroot\plugins\bootstrap-select.min.js" />
-    <None Include="wwwroot\plugins\bootstrap.min.js" />
-    <None Include="wwwroot\plugins\fancybox\jquery.fancybox.min.js" />
-    <None Include="wwwroot\plugins\slick\config.rb" />
-    <None Include="wwwroot\plugins\slick\fonts\slick.svg" />
-    <None Include="wwwroot\plugins\slick\slick-theme.less" />
-    <None Include="wwwroot\plugins\slick\slick-theme.scss" />
-    <None Include="wwwroot\plugins\slick\slick.js" />
-    <None Include="wwwroot\plugins\slick\slick.less" />
-    <None Include="wwwroot\plugins\slick\slick.min.js" />
-    <None Include="wwwroot\plugins\slick\slick.scss" />
+    <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap-grid.min.css.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap-grid.rtl.css.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap-grid.rtl.min.css.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.css.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.min.css.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.rtl.css.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.rtl.min.css.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.css.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.min.css.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.rtl.css.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.rtl.min.css.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap.css.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap.min.css.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap.rtl.css.map" />
+    <None Include="wwwroot\lib\bootstrap\dist\css\bootstrap.rtl.min.css.map" />
   </ItemGroup>
+
+
 
 </Project>
