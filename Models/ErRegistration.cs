@@ -1,12 +1,16 @@
-﻿namespace HospitalQueue.Models
+﻿using System.ComponentModel.DataAnnotations;
+using System.Configuration;
+
+namespace HospitalQueue.Models
 {
     public class ErRegistration
     {
-     //   private int Key { get; set; } //private field
-        public string? FullNames { get; set; }    
-        public string? LastName { get; set; }
-        public int? ID { get; set; }
-        public int? PhoneNumber { get; set; }
+        [RegularExpression("^[a-zA-Z]+$", ErrorMessage = "Only alphabetic characters are allowed.")]
+        public string? FullNames { get; set; }
+        [RegularExpression("^[a-zA-Z]+$", ErrorMessage = "Only alphabetic characters are allowed.")]
+        public  string? LastName { get; set; }
+        public  int? ID { get; set; }
+        public  int? PhoneNumber { get; set; }
         public DateTime DateTime { get; set; }
 
         public List<KeyValuePair<int, string>>? ProblemPriority { get; set; }

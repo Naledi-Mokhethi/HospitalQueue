@@ -37,10 +37,10 @@
                             <div class="content style text-center">
                                 <h2 class="text-white text-bold mb-2">Patients in Queue</h2>
                                 <p class="tag-text mb-5">
-                                    Now Serving <strong> @Model  </strong>In ER Room 001
+                                    Now Serving <strong> @Model </strong>In ER Room 001
                                 </p>
                                 
-                                <a href="#" class="btn btn-main btn-white">Dequeue</a> <!--Direct to dequeue controller action and updated/refresh the now serving and next-->
+                                <a asp-controller="ErRegistration" asp-action="Dequeue" class="btn btn-main btn-white">Dequeue</a> <!--Direct to dequeue controller action and updated/refresh the now serving and next-->
                             </div>
                             <!-- Slide Content End -->
                         </div>

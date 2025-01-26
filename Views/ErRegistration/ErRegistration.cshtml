@@ -1,9 +1,5 @@
 ﻿@model HospitalQueue.Models.ErRegistration
 
-@{
-   // Layout = null;
-}
-
 <!DOCTYPE html>
 
 <html>
@@ -42,11 +38,10 @@
                         <div class="row">
                             <div class="col-md-6 col-sm-12 col-xs-12">
                                 <div class="form-group">
-                                    <input asp-for="FullNames" class="form-control" placeholder="Full Name" required="" autocomplete="off" />
-                              
+                                    <input asp-for="FullNames" class="form-control" placeholder="Full Name" required autocomplete="off" />
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" asp-for="ID" class="form-control" placeholder="ID Number" required="" autocomplete="off">
+                                    <input type="text" asp-for="ID" maxlength="13" class="form-control" placeholder="ID Number" required autocomplete="off">
                                    
                                 </div>
                             </div>
@@ -56,7 +51,7 @@
                                   
                                 </div>
                                 <div class="form-group">
-                                    <input asp-for="PhoneNumber" type="text" class="form-control" placeholder="Phone Number" required="" />
+                                    <input asp-for="PhoneNumber" type="tel" maxlength="10" class="form-control" placeholder="Phone Number" required />
  
                                 </div>
                                 <div class="form-group" hidden="hidden">
@@ -67,6 +62,7 @@
                                 <strong>Please select your emergency (or similar)</strong>
                                 <br>
                                 <div class="form-group">
+                                 
                                     <select asp-for="SelectedPriority">
                                         @foreach (var item in Model.ProblemPriority)
                                         {
@@ -78,7 +74,7 @@
                                 <div class="form-group">
                                     <textarea asp-for="Description" class="form-control" placeholder="Problem Description (Opional)">
                                            </textarea>
-                                 
+                                   
                                 </div>
                                 <div class="form-group text-center">
                                     <button type="submit" value="Save" class="btn-style-one">submit</button>
@@ -90,7 +86,6 @@
                 </div>
             </div>
     </section>
- @*    <script src="~/plugins/jquery.js"></script> *@
     <script src="~/plugins/bootstrap.min.js"></script>
     <script src="~/plugins/bootstrap-select.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
@@ -98,7 +93,7 @@
         function displayAlertSuccess() {
             Swal.fire('Registration Sent', 'success', 'success')
         }
-        
+
         function sendForm(e) {
             e.preventDefault();
 

@@ -35,32 +35,39 @@ namespace HospitalQueue.Controllers
             return View(viewModel);
         }
         [HttpGet]
-        public IActionResult Success() { 
-            return View(); // temp
+        public IActionResult Dequeue()
+        {
+            _myPriorityQueue.Dequeue();
+            return RedirectToAction("Index", "Home");
+
         }
 
         [HttpPost]
         public IActionResult ErRegistration(ErRegistration model)
         {
-            //Node data list can be populated from here....
-            model.DateTime = DateTime.Now;  
-            List<object> patientDataList = new List<object>
+            if (ModelState.IsValid)
+            {
+                model.DateTime = DateTime.Now;
+                List<object> patientDataList = new List<object>
             {
                 model.FullNames!,
                 model.LastName!,
-                model.ID,
+                model.ID!,
                 model.PhoneNumber!,
                 model.DateTime,
                 model.SelectedPriority,
                 model.Description
-            };  
-            //Passing the value of the selected Priority
-            int selectedPriority = model.SelectedPriority;
-            _myPriorityQueue.MaxEnqueue(patientDataList, selectedPriority);
+            };
+                //Passing the value of the selected Priority
+                int selectedPriority = model.SelectedPriority;
+                _myPriorityQueue.MaxEnqueue(patientDataList, selectedPriority);
 
-            return View("Success");// the number will be returned by the custom UI so return index after response 
+                return RedirectToAction("Index", "Home");
+            }
+            else
+                return RedirectToAction("ErRegistration");
         }
-       
+
     }
 
 }
