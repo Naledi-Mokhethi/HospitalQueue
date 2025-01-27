@@ -1,4 +1,10 @@
 using HospitalQueue.Class;
+using HospitalQueue.DAL;
+using System.Configuration;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -8,8 +14,14 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddSingleton<PriorityQueue>();
 
 
-//builder.Services.AddDbContext<YourDbContext>(options =>
-//    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+// Bind configuration from appsettings.json
+builder.Configuration.AddJsonFile("appsettings.json", optional: false, reloadOnChange: true); //see if we need it 
+
+// Retrieve the connection string from the configuration
+string? connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+
+// Register PatientsDAL with dependency injection
+builder.Services.AddTransient<PatientsDAL>(provider => new PatientsDAL(connectionString!));
 
 var app = builder.Build();
 
