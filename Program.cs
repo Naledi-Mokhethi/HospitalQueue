@@ -13,10 +13,6 @@ builder.Services.AddControllersWithViews();
 
 builder.Services.AddSingleton<PriorityQueue>();
 
-
-// Bind configuration from appsettings.json
-builder.Configuration.AddJsonFile("appsettings.json", optional: false, reloadOnChange: true); //see if we need it 
-
 // Retrieve the connection string from the configuration
 string? connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 

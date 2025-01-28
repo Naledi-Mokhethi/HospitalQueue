@@ -16,7 +16,7 @@ namespace HospitalQueue.DAL
 
         public void InsertData(List<object> dataList)
         {
-            string insertQuery = "INSERT INTO ERPatientData (Column1, Column2, Column3, Column4,Column5,Column6,Column7) VALUES (@Value1, @Value2, @Value3, @Value4, @Value5, @Value6, @Value37,)";
+            string insertQuery = "INSERT INTO ERPatientData ([Full Names],[Last Name], ID, [Phone Number],DateTime,Priority,Description) VALUES (@Value1, @Value2, @Value3, @Value4, @Value5, @Value6, @Value7)";
 
             using (var connection = new SqlConnection(_connectionString))
             {

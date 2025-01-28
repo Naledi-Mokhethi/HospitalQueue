@@ -1,4 +1,5 @@
 ﻿using Microsoft.CodeAnalysis.Elfie.Serialization;
+using HospitalQueue.DAL;
 
 namespace HospitalQueue.Class
 {
@@ -26,7 +27,7 @@ namespace HospitalQueue.Class
                 current.Next = newNode;//replace node with new value 
             }
         }
-        public string Dequeue()
+        public string Dequeue(PatientsDAL _patientsDAL)
         {
             if (IsEmpty())
             {
@@ -34,7 +35,8 @@ namespace HospitalQueue.Class
             }
 
             var value = head!.Data;
-            head = head.Next;// Before changing the head, we need to write the currrent head to the database 
+            _patientsDAL.InsertData(value);// Before removing the head, we need to write the currrent head to the database 
+            head = head.Next;
             return (string)value[0]; //Return next patients name
         }
 
@@ -49,10 +51,6 @@ namespace HospitalQueue.Class
             {
                 throw new InvalidOperationException("ER Queue is empty.");
             }
-            //if (head!.Next != null)
-            //    return (string)head!.Data[0]; // used to show the patient that is currently being helped  We are gonna 
-            //else
-            //    return "There is no next patient";
 
             return (string)head!.Data[0] + " " + (string)head!.Data[1];
         }

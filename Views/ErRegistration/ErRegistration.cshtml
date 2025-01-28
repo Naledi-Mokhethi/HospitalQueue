@@ -41,8 +41,7 @@
                                     <input asp-for="FullNames" class="form-control" placeholder="Full Name" required autocomplete="off" />
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" asp-for="ID" maxlength="13" class="form-control" placeholder="ID Number" required autocomplete="off">
-                                   
+                                    <input asp-for="IdentityNum" type="text"  class="form-control" placeholder="Identity Number" required="" />
                                 </div>
                             </div>
                             <div class="col-md-6 col-sm-12 col-xs-12">
@@ -51,8 +50,7 @@
                                   
                                 </div>
                                 <div class="form-group">
-                                    <input asp-for="PhoneNumber" type="tel" maxlength="10" class="form-control" placeholder="Phone Number" required />
- 
+                                    <input asp-for="PhoneNumber" type="tel" class="form-control" placeholder="Phone Number" required />
                                 </div>
                                 <div class="form-group" hidden="hidden">
                                     <input asp-for="DateTime" type="datetime" placeholder="Date">
@@ -90,10 +88,6 @@
     <script src="~/plugins/bootstrap-select.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script>
-        function displayAlertSuccess() {
-            Swal.fire('Registration Sent', 'success', 'success')
-        }
-
         function sendForm(e) {
             e.preventDefault();
 

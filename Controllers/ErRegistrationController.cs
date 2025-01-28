@@ -1,7 +1,7 @@
 ﻿using HospitalQueue.Models;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using HospitalQueue.Class;
+using HospitalQueue.DAL;
 
 
 namespace HospitalQueue.Controllers
@@ -9,10 +9,12 @@ namespace HospitalQueue.Controllers
     public class ErRegistrationController : Controller
     {
         private readonly PriorityQueue _myPriorityQueue;
+        private readonly PatientsDAL _patientsDAL;
 
-        public ErRegistrationController(PriorityQueue myPriorityQueue)
+        public ErRegistrationController(PriorityQueue myPriorityQueue, PatientsDAL patientsDAL)
         {
             _myPriorityQueue = myPriorityQueue;
+            _patientsDAL = patientsDAL;
         }
 
         // GET: LoginRegistration
@@ -37,7 +39,8 @@ namespace HospitalQueue.Controllers
         [HttpGet]
         public IActionResult Dequeue()
         {
-            _myPriorityQueue.Dequeue();
+            
+            _myPriorityQueue.Dequeue(_patientsDAL);
             return RedirectToAction("Index", "Home");
 
         }
@@ -52,7 +55,7 @@ namespace HospitalQueue.Controllers
             {
                 model.FullNames!,
                 model.LastName!,
-                model.ID!,
+                model.IdentityNum!,
                 model.PhoneNumber!,
                 model.DateTime,
                 model.SelectedPriority,

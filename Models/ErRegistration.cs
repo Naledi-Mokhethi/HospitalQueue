@@ -7,9 +7,10 @@ namespace HospitalQueue.Models
     {
         [RegularExpression("^[a-zA-Z]+$", ErrorMessage = "Only alphabetic characters are allowed.")]
         public string? FullNames { get; set; }
+        public int? IdentityNum { get; set; }
         [RegularExpression("^[a-zA-Z]+$", ErrorMessage = "Only alphabetic characters are allowed.")]
         public  string? LastName { get; set; }
-        public  int? ID { get; set; }
+    
         public  int? PhoneNumber { get; set; }
         public DateTime DateTime { get; set; }
 

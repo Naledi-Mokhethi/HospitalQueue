@@ -19,6 +19,15 @@ It is designed to queue walk in patients based on the urgency of their medical e
 ### Purpose
 - The primary objective of this project was to work with data structures and get comfortable with them.
 - The project includes a custom node class and a custom priority queue class.
+- The Form takes the user input and temporarily store's it in the node as a list.
+- The patients are queued according to the severity of their problems.
+- Once a patient has been helped the dequeue is triggered. 
+- The patient data is written to the database for record keeping purposes. 
+
+### Pending Updates 
+- Login for Nurse's to limit access to functionalities such as the dequeue. 
+- A get patients records that will read and export the history of the ER Patients for audit purposes.
+- Browser data caching to keep the data when the browser is closed.
 
 ### Credit
 - The UI Template was acquired on themewagon.com
