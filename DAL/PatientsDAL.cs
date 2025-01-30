@@ -26,8 +26,8 @@ namespace HospitalQueue.DAL
                 {
                     Value1 = (string)dataList[0],
                     Value2 = (string)dataList[1],
-                    Value3 = (int)dataList[2],
-                    Value4 = (int)dataList[3],
+                    Value3 = (string)dataList[2],
+                    Value4 = (string)dataList[3],
                     Value5 = (DateTime)dataList[4],
                     Value6 = (int)dataList[5],
                     Value7 = (string)dataList[6]

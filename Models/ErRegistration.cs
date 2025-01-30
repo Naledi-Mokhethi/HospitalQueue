@@ -7,11 +7,12 @@ namespace HospitalQueue.Models
     {
         [RegularExpression("^[a-zA-Z]+$", ErrorMessage = "Only alphabetic characters are allowed.")]
         public string? FullNames { get; set; }
-        public int? IdentityNum { get; set; }
+        [RegularExpression(@"^\d{1,13}$", ErrorMessage = "Identity Number must be between 1 and 13 digits.")]
+        public string? IdentityNum { get; set; }
         [RegularExpression("^[a-zA-Z]+$", ErrorMessage = "Only alphabetic characters are allowed.")]
         public  string? LastName { get; set; }
-    
-        public  int? PhoneNumber { get; set; }
+        [RegularExpression(@"^\d{1,10}$", ErrorMessage = "Phone Number must be between 1 and 10 digits.")]
+        public  string? PhoneNumber { get; set; }
         public DateTime DateTime { get; set; }
 
         public List<KeyValuePair<int, string>>? ProblemPriority { get; set; }

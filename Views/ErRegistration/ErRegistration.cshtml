@@ -24,6 +24,8 @@
 
 </head>
 <body>
+    <label>PLEASE NOTE: If the registration page reloads, your input was invalid and your registration was NOT sent</label>
+    <label>Please enter only letters for the Full Name and Last Name, and only numbers for the ID and Phone number, Thank you</label>
     <section class="appoinment-section section">
         <div class="container">    
                 <div class="col-md-6 col-sm-12 col-xs-12">
@@ -41,7 +43,7 @@
                                     <input asp-for="FullNames" class="form-control" placeholder="Full Name" required autocomplete="off" />
                                 </div>
                                 <div class="form-group">
-                                    <input asp-for="IdentityNum" type="text"  class="form-control" placeholder="Identity Number" required="" />
+                                    <input asp-for="IdentityNum" type="text" class="form-control" placeholder="Identity Number" required" maxlength="13" />
                                 </div>
                             </div>
                             <div class="col-md-6 col-sm-12 col-xs-12">
@@ -50,7 +52,7 @@
                                   
                                 </div>
                                 <div class="form-group">
-                                    <input asp-for="PhoneNumber" type="tel" class="form-control" placeholder="Phone Number" required />
+                                    <input asp-for="PhoneNumber" type="tel" class="form-control" placeholder="Phone Number" required maxlength="10" />
                                 </div>
                                 <div class="form-group" hidden="hidden">
                                     <input asp-for="DateTime" type="datetime" placeholder="Date">
