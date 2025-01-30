@@ -21,10 +21,9 @@ namespace HospitalQueue.Controllers
         public IActionResult Index()
         {
             // we call the peak and access its members then pass them to the view
-            if (_myPriorityQueue.head != null)
+            if (_myPriorityQueue!.head != null)
             {
-                //_myPriorityQueue.Peek();
-                //we are gonna return the view with the node attached
+              
                 return View("Index",_myPriorityQueue.Peek());
             }
             return View("Index","No One");

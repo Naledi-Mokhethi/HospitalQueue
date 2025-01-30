@@ -64,7 +64,7 @@
                                 <div class="form-group">
                                  
                                     <select asp-for="SelectedPriority">
-                                        @foreach (var item in Model.ProblemPriority)
+                                        @foreach (var item in Model.ProblemPriority!)
                                         {
                                             <option value="@item.Key">@item.Value</option>
                                         }
