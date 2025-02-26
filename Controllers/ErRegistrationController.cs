@@ -10,7 +10,7 @@ namespace HospitalQueue.Controllers
     {
         private readonly PriorityQueue _myPriorityQueue;
         private readonly PatientsDAL _patientsDAL;
-
+      
         public ErRegistrationController(PriorityQueue myPriorityQueue, PatientsDAL patientsDAL)
         {
             _myPriorityQueue = myPriorityQueue;
@@ -48,9 +48,9 @@ namespace HospitalQueue.Controllers
         [HttpPost]
         public IActionResult ErRegistration(ErRegistration model)
         {
+            model.DateTime = DateTime.Now;
             if (ModelState.IsValid)
             {
-                model.DateTime = DateTime.Now;
                 List<object> patientDataList = new List<object>
             {
                 model.FullNames!,

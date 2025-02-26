@@ -30,7 +30,6 @@ It is designed to queue walk in patients based on the urgency of their medical e
 - Login for Nurse's to limit access to functionalities such as the dequeue.
 - Login will use a RESTful Authentication API. 
 - A get patients records that will read and export the history of the ER Patients for audit purposes.
-- Browser data caching to keep the data when the browser is closed.
 
 ### Credit
 - The UI Template was acquired on themewagon.com
