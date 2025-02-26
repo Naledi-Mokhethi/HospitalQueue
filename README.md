@@ -5,10 +5,12 @@ This is a basic hospital emergency room management system.
 It is designed to queue walk in patients based on the urgency of their medical emergency.
 
 ### Detailed Walkthrough 
-- The project is follows the MVC framework.
+- The project is follows the MVC Structure.
 - It is built on .NET 8.
 - It is a C# website.
-- The project DAL uses SQL Express and was developed using SSM
+- The project DAL uses SQL Express and was developed using SSMS
+- The frontend is built using HTML, CSS and JavaScript.
+- On form submission there is a beautiful confirm dialog implemented with SweetAlert
 
 ### Developers Guide 
 - Application was developed using visual studio however, vs-code can be used.
