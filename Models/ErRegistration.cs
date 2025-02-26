@@ -7,6 +7,7 @@ namespace HospitalQueue.Models
     {
         [RegularExpression("^[a-zA-Z]+$", ErrorMessage = "Only alphabetic characters are allowed.")]
         public string FullNames { get; set; } = string.Empty;
+
         [RegularExpression(@"^\d{1,13}$", ErrorMessage = "Identity Number must be between 1 and 13 digits.")]
         public string IdentityNum { get; set; } = string.Empty;
         [RegularExpression("^[a-zA-Z]+$", ErrorMessage = "Only alphabetic characters are allowed.")]
@@ -17,6 +18,6 @@ namespace HospitalQueue.Models
 
         public List<KeyValuePair<int, string>>? ProblemPriority { get; set; }
         public int SelectedPriority { get; set; }
-        public string Description { get; set; } = string.Empty;
+        public string? Description { get; set; } = string.Empty;
     }
 }
