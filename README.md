@@ -36,4 +36,4 @@ It is designed to queue walk in patients based on the urgency of their medical e
 - Please follow this URL to see or download the full template:
 https://themewagon.com/themes/free-responsive-html5-bootstrap-medical-website-template-medic/
 A special thanks to the front-end developer/team that created this beautiful template
-- Note, Theme was customized to meet my requirements so if you need the full one. Please follow the link.
+- Note, Theme was customized to meet my requirements so if you need the full one. Please follow the link...
