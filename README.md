@@ -11,7 +11,8 @@ It is designed to queue walk in patients based on the urgency of their medical e
 - The project DAL uses SQL Express and was developed using SSMS
 - The frontend is built using HTML, CSS and JavaScript.
 - On form submission there is a beautiful confirm dialog implemented with SweetAlert
-- It has Data Transfer Objects 
+- It has Data Transfer Objects.
+- It consumes the Authentication Web API on my portfolio
 
 ### Developers Guide 
 - Application was developed using visual studio however, vs-code can be used.
@@ -29,7 +30,7 @@ It is designed to queue walk in patients based on the urgency of their medical e
 
 ### Pending Updates 
 - Login for Nurse's to limit access to functionalities such as the dequeue.
-- Login will use a RESTful Authentication API. 
+- Login will use a RESTful Authentication API - In progress
 - A get patients records that will read and export the history of the ER Patients for audit purposes.
 
 ### Credit
