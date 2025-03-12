@@ -11,6 +11,7 @@ It is designed to queue walk in patients based on the urgency of their medical e
 - The project DAL uses SQL Express and was developed using SSMS
 - The frontend is built using HTML, CSS and JavaScript.
 - On form submission there is a beautiful confirm dialog implemented with SweetAlert
+- It has Data Transfer Objects 
 
 ### Developers Guide 
 - Application was developed using visual studio however, vs-code can be used.
