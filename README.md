@@ -13,7 +13,8 @@ It is designed to queue walk in patients based on the urgency of their medical e
 - On form submission there is a beautiful confirm dialog implemented with SweetAlert
 - It has Data Transfer Objects.
 - It consumes the Authentication Web API on my portfolio
-
+- For a quick demo I have also included a video that will give you a quick view of the code and application walkthrough.
+- VIDEO: [HospitalQueueWalkthough](https://drive.google.com/file/d/1C4G6WwJK3VegYWBU1Ud8HUbrzuq4rtIG/view?usp=sharing)
 ### Developers Guide 
 - Application was developed using visual studio however, vs-code can be used.
 - You need to have an SQL/SQLExpress database installed.
