@@ -31,7 +31,7 @@ It is designed to queue walk in patients based on the urgency of their medical e
 
 ### Pending Updates 
 - Login for Nurse's to limit access to functionalities such as the dequeue.
-- Login will use a RESTful Authentication API - In progress
+- Login will use a RESTful Authentication API - In progress.
 - A get patients records that will read and export the history of the ER Patients for audit purposes.
 
 ### Credit
